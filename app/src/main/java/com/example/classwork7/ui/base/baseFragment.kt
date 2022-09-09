@@ -26,6 +26,7 @@ abstract class BaseFragment<VB : ViewBinding>(private val inflater: Inflater<VB>
         super.onViewCreated(view, savedInstanceState)
         init()
         listeners()
+        observers()
     }
 
     abstract fun listeners()

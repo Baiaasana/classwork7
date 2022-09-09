@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#22343C"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -10,7 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Courses"
-        android:textSize="32sp"
+        android:layout_marginTop="80dp"
+        android:textSize="36sp"
+        android:textColor="@color/white"
+        app:fontFamily="@font/semibold"
+        android:paddingHorizontal="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -18,11 +23,10 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="@+id/btm_nav_bar"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@+id/tv_courses"
         app:layout_constraintStart_toStartOf="@+id/tv_courses"
-        app:layout_constraintTop_toTopOf="@+id/tv_courses"
+        app:layout_constraintTop_toBottomOf="@+id/tv_courses"
         tools:context=".ui.course.CourseFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,6 +42,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="NotSibling"
                 tools:itemCount="1"
                 tools:listitem="@layout/new_item" />
 
@@ -56,14 +61,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/btm_nav_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/nestedScrollView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

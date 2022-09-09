@@ -1,32 +1,16 @@
 package com.example.classwork7.ui.chat
 
-import androidx.lifecycle.ViewModelProvider
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.example.classwork7.R
+import com.example.classwork7.databinding.FragmentChatBinding
+import com.example.classwork7.ui.base.BaseFragment
 
-class ChatFragment : Fragment() {
+class ChatFragment : BaseFragment<FragmentChatBinding>(FragmentChatBinding::inflate) {
 
-    companion object {
-        fun newInstance() = ChatFragment()
+    override fun listeners() {
     }
 
-    private lateinit var viewModel: ChatViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        return inflater.inflate(R.layout.fragment_chat, container, false)
+    override fun init() {
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ChatViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun observers() {
     }
-
 }
