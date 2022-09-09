@@ -1,6 +1,7 @@
 package com.example.classwork7.di
 
 import com.example.classwork7.data.remote.ApiService
+import com.example.classwork7.utils.Const
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -35,7 +36,7 @@ object AppModule {
     @Singleton
     @Provides
     fun apiService(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-        .baseUrl("https://run.mocky.io/v3/")
+        .baseUrl(Const.BASE_URL)
         .addConverterFactory(
             MoshiConverterFactory.create(
                 Moshi.Builder()

@@ -1,6 +1,7 @@
 package com.example.classwork7.adapters
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -20,34 +21,30 @@ class NewItemAdapter :
         @SuppressLint("SetTextI18n")
         fun bind() {
             val item = getItem(adapterPosition)
+            val color = Color.parseColor("#${item.mainColor}")
             binding.apply {
                 tvTitle.text = item.title
                 tvQuestion.text = item.question
                 tvDuration.text = "${item.duration} min"
+                cvItem.setBackgroundColor(color)
             }
             setImage(item = item)
         }
 
         private fun setImage(item: CourseModel.NewCourse) {
-            when (item.iconType) {
+            when (item.iconType.toString()) {
                 Constants.SETTINGS.type -> binding.ivImage.setImageResource(R.drawable.ic_settings)
                 Constants.CARD.type -> binding.ivImage.setImageResource(R.drawable.ic_card)
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-
-        return ItemViewHolder(NewItemBinding.inflate(LayoutInflater.from(parent.context),
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder =
+        ItemViewHolder(NewItemBinding.inflate(LayoutInflater.from(parent.context),
             parent,
             false))
 
-    }
-
-    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-
-        holder.bind()
-    }
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) = holder.bind()
 
     object ItemCallback : DiffUtil.ItemCallback<CourseModel.NewCourse>() {
         override fun areItemsTheSame(
@@ -64,5 +61,4 @@ class NewItemAdapter :
             return oldItem == newItem
         }
     }
-
 }

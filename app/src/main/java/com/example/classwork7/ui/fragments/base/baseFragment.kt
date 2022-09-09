@@ -1,4 +1,4 @@
-package com.example.classwork7.ui.base
+package com.example.classwork7.ui.fragments.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

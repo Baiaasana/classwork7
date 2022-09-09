@@ -9,8 +9,8 @@ import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class CourseRepositoryImpl @Inject constructor(
-    private val api: ApiService
-    ) : Repository {
+    private val api: ApiService,
+) : Repository {
 
     override suspend fun doNetworkCall(): Flow<Resource<CourseModel>> = flow {
         try {

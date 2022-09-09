@@ -1,4 +1,4 @@
-package com.example.classwork7.ui.course
+package com.example.classwork7.ui.fragments.course
 
 import android.widget.Toast
 import androidx.fragment.app.viewModels
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.classwork7.adapters.ActiveItemAdapter
 import com.example.classwork7.adapters.NewItemAdapter
 import com.example.classwork7.databinding.FragmentCourseBinding
-import com.example.classwork7.ui.base.BaseFragment
+import com.example.classwork7.ui.fragments.base.BaseFragment
 import com.example.classwork7.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch

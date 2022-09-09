@@ -4,20 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:backgroundTint="@color/purple_200"
     app:cardCornerRadius="24dp"
     app:cardElevation="25dp">
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/cv_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/purple_200"
         android:orientation="horizontal"
         android:padding="16dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
             android:backgroundTint="@color/yellow"
             app:cardCornerRadius="20dp">
 
@@ -25,6 +27,7 @@
                 android:id="@+id/iv_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:padding="15dp"
                 android:src="@mipmap/img" />
         </androidx.cardview.widget.CardView>
@@ -32,42 +35,56 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="30dp"
-            android:orientation="vertical">
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:weightSum="10">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_weight="5"
+                android:layout_weight="2"
                 android:gravity="center_vertical"
                 android:orientation="vertical"
-                android:text="title"
-                android:textSize="18sp"
-                android:textColor="@color/black" />
+                android:text="@string/title"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_title_lite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_weight="5"
-                android:textSize="18sp"
+                android:layout_weight="2"
+                android:alpha="0.5"
                 android:gravity="center_vertical"
                 android:orientation="vertical"
-                android:text="title"
-                android:textColor="@color/black" />
-
+                android:text="@string/title_lite"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
         </LinearLayout>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_progress"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="25dp"
-            android:layout_gravity="end"
-            android:src="@drawable/ic_progress" />
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:padding="23dp"
+                android:src="@drawable/ic_progress" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/pi_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                app:trackColor="#00000000" />
+
+        </FrameLayout>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

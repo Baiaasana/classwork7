@@ -1,7 +1,8 @@
-package com.example.classwork7
+package com.example.classwork7.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.classwork7.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -1,4 +1,4 @@
-package com.example.classwork7.ui.course
+package com.example.classwork7.ui.fragments.course
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
