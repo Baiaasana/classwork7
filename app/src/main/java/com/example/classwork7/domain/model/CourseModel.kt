@@ -6,7 +6,6 @@ data class CourseModel(
     val active_courses: List<ActiveCourses>?,
     val new_courses: List<NewCourse>?,
 ) {
-
     data class NewCourse(
         val duration: String?,
         @field:Json(name = "icon_type")
@@ -30,4 +29,5 @@ data class CourseModel(
         val playButtonColorPercent: String?,
         val progress: String?,
         val title: String?,
-    )}
+    )
+}

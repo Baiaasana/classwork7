@@ -20,4 +20,5 @@
         android:name="com.example.classwork7.ui.favourites.FavouritesFragment"
         android:label="fragment_favourites"
         tools:layout="@layout/fragment_favourites" />
+
 </navigation>

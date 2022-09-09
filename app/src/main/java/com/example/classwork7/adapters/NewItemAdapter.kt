@@ -3,6 +3,7 @@ package com.example.classwork7.adapters
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.classwork7.R
@@ -47,4 +48,21 @@ class NewItemAdapter :
 
         holder.bind()
     }
+
+    object ItemCallback : DiffUtil.ItemCallback<CourseModel.NewCourse>() {
+        override fun areItemsTheSame(
+            oldItem: CourseModel.NewCourse,
+            newItem: CourseModel.NewCourse,
+        ): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(
+            oldItem: CourseModel.NewCourse,
+            newItem: CourseModel.NewCourse,
+        ): Boolean {
+            return oldItem == newItem
+        }
+    }
+
 }
